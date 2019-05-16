@@ -1817,6 +1817,8 @@ class FilterBoxViz(BaseViz):
     def run_extra_queries(self):
         qry = super(FilterBoxViz, self).query_obj()
         filters = self.form_data.get('filter_configs') or []
+        if not filters:
+            raise Exception(_('please add a filter under the [Filters Configuration]'))
         qry['row_limit'] = self.filter_row_limit
         self.dataframes = {}
         for flt in filters:
