@@ -2318,6 +2318,7 @@ export const controls = {
     type: 'CollectionControl',
     label: 'Filters',
     description: t('Filter configuration for the filter box'),
+    default: [],
     validators: [v.nonEmpty],
     controlName: 'FilterBoxItemControl',
     mapStateToProps: ({ datasource }) => ({ datasource }),
